@@ -1,5 +1,45 @@
 var selectedRow = null
 
+function rendertabelmahasiswa(data){
+    let index = 0;
+    let tbody = document.getElementById("studentlist").querySelector('tbody');
+    tbody.innerHTML = '';
+    for(index = 0; index < data.length; index++){
+        let colname = '<td>'+data[index].namamahasiswa+'</td>';
+        let colNIM = '<td>'+data[index].NomorInduk+'</td>';
+        let coljurusan = '<td>'+data[index].Jurusan+'</td>';
+        let colangkatan = '<td>'+data[index].Angkatan+'</td>';
+        let doublebutton = '<td> <a onClick="Edit(this)">Edit</a><a onClick="Delete(this)">Delete</a>';
+
+        let barisbaru = '<tr>'+colname+colNIM+coljurusan+colangkatan+doublebutton+'</tr>';
+        tbody.innerHTML += barisbaru;
+    }
+}
+
+function loadfirstdata(){
+    let request = new XMLHttpRequest();
+    request.open('GET','first.json', true);
+
+    request.onload = function(){
+        if(request.status >= 200 && request.status < 400){
+            let dataawal = JSON.parse(request.responseText);
+            //console.log(data);
+            rendertabelmahasiswa(dataawal);
+        }
+        else{
+            alert('Page Not Found');
+        }
+    }
+    request.onerror = function(){
+        alert('Request Failed! Check your internet connection');
+    }
+    request.send();
+}
+
+function onDocFinish(){
+    loadfirstdata();
+}
+
 function onFormSubmit(){
     if (validate()){
         var formData = readFormData();
