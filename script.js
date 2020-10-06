@@ -1,13 +1,15 @@
 var selectedRow = null
 
 function onFormSubmit(){
-    var formData = readFormData();
+    if (validate()){
+        var formData = readFormData();
     if(selectedRow==null)
         insertNewData(formData);
         else
         updateData(formData);
 
     clearForm();
+    }
 }
 
 function readFormData(){
@@ -63,5 +65,17 @@ function Delete(td){
         document.getElementById("studentlist").deleteRow(row.rowIndex);
         clearForm();
     } 
+}
 
+function validate() {
+    isValid = true;
+    if (document.getElementById("namamahasiswa").value == "") {
+        isValid = false;
+        document.getElementById("fullNameValidationError").classList.remove("hide");
+    } else {
+        isValid = true;
+        if (!document.getElementById("fullNameValidationError").classList.contains("hide"))
+            document.getElementById("fullNameValidationError").classList.add("hide");
+    }
+    return isValid;
 }
