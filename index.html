@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+
+        </title>
+        <link rel="stylesheet" href="styles.css">
+    </head>
+
+    <body>
+        <table>
+            <tr>
+                <td>
+                    <form onsubmit="event.preventDefault();onFormSubmit();" autocomplete="off">
+                        <div>
+                            <label>Nama</label>
+                            <input type="text" name="namamahasiswa" id="namamahasiswa">
+                        </div>
+                        <div>
+                            <label>Nomor Induk</label>
+                            <input type="text" name="NomorInduk" id="NomorInduk">
+                        </div>
+                        <div>
+                            <label>Jurusan</label>
+                            <input type="text" name="Jurusan" id="Jurusan">
+                        </div>
+                        <div>
+                            <label>Angkatan</label>
+                            <input type="text" name="Angkatan" id="Angkatan">
+                        </div>
+                        <div class="form-action-buttons">
+                            <input type="submit" value="Submit">
+                        </div>
+                    </form>
+                </td>
+                <td>
+                    <table class="list" id="studentlist">
+                        <thead>
+                            <tr>
+                                <th>Nama</th>
+                                <th>NIM</th>
+                                <th>Jurusan</th>
+                                <th>Angkatan</th>
+                                <th></th>
+                            </tr>
+                        </thead>
+                        <tbody>
+
+                        </tbody>
+                    </table>
+                </td>
+            </tr>
+        </table>
+        <script src="script.js"></script>
+    </body>
+</html>
