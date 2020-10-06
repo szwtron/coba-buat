@@ -1,14 +1,14 @@
 var selectedRow = null
 
-function rendertabelmahasiswa(data){
+function rendertabelmahasiswa(dataawal){
     let index = 0;
     let tbody = document.getElementById("studentlist").querySelector('tbody');
     tbody.innerHTML = '';
-    for(index = 0; index < data.length; index++){
-        let colname = '<td>'+data[index].namamahasiswa+'</td>';
-        let colNIM = '<td>'+data[index].NomorInduk+'</td>';
-        let coljurusan = '<td>'+data[index].Jurusan+'</td>';
-        let colangkatan = '<td>'+data[index].Angkatan+'</td>';
+    for(index = 0; index < dataawal.length; index++){
+        let colname = '<td>'+dataawal[index].namamahasiswa+'</td>';
+        let colNIM = '<td>'+dataawal[index].NomorInduk+'</td>';
+        let coljurusan = '<td>'+dataawal[index].Jurusan+'</td>';
+        let colangkatan = '<td>'+dataawal[index].Angkatan+'</td>';
         let doublebutton = '<td> <a onClick="Edit(this)">Edit</a><a onClick="Delete(this)">Delete</a>';
 
         let barisbaru = '<tr>'+colname+colNIM+coljurusan+colangkatan+doublebutton+'</tr>';
@@ -23,7 +23,7 @@ function loadfirstdata(){
     request.onload = function(){
         if(request.status >= 200 && request.status < 400){
             let dataawal = JSON.parse(request.responseText);
-            //console.log(data);
+            console.log(dataawal);
             rendertabelmahasiswa(dataawal);
         }
         else{
