@@ -8,33 +8,15 @@
     </head>
     
     <body onload="onDocFinish()">
-        <table style="width: 100%;">
+        <div class="backgroundvideo">
+            <video autoplay muted loop class="galaxyvideo" poster="bgimg.png">
+                <source src="background.mp4" type="video/mp4">
+            </video>
+        </div>
+        <table class="content col-12">
             <tr>
-                <td>
-                    <form onsubmit="event.preventDefault();onFormSubmit();" autocomplete="off">
-                        <div>
-                            <label>Nama</label><label class="validation-error hide" id="fullNameValidationError">This field is required.</label>
-                            <input type="text" name="namamahasiswa" id="namamahasiswa">
-                        </div>
-                        <div>
-                            <label>Nomor Induk</label>
-                            <input type="text" name="NomorInduk" id="NomorInduk">
-                        </div>
-                        <div>
-                            <label>Jurusan</label>
-                            <input type="text" name="Jurusan" id="Jurusan">
-                        </div>
-                        <div>
-                            <label>Angkatan</label>
-                            <input type="text" name="Angkatan" id="Angkatan">
-                        </div>
-                        <div class="form-action-buttons">
-                            <input type="submit" value="Submit">
-                        </div>
-                    </form>
-                </td>
-                <td>
-                    <table class="list" id="studentlist">
+                <tr>
+                    <table class="list col-10" id="studentlist">
                         <thead>
                             <tr>
                                 <th>Nama</th>
@@ -48,7 +30,33 @@
 
                         </tbody>
                     </table>
-                </td>
+                </tr><br>
+                <tr>
+                    <td>
+                        <form onsubmit="event.preventDefault();onFormSubmit();" autocomplete="off" class="submitform col-3">
+                            <div>
+                                <label>Nama</label><label class="validation-error hide" id="fullNameValidationError">This field is required.</label>
+                                <input type="text" name="namamahasiswa" id="namamahasiswa">
+                            </div>
+                            <div>
+                                <label>Nomor Induk</label>
+                                <input type="text" name="NomorInduk" id="NomorInduk">
+                            </div>
+                            <div>
+                                <label>Jurusan</label>
+                                <input type="text" name="Jurusan" id="Jurusan">
+                            </div>
+                            <div>
+                                <label>Angkatan</label>
+                                <input type="text" name="Angkatan" id="Angkatan">
+                            </div>
+                            <div class="form-action-buttons">
+                                <input type="submit" value="Submit">
+                            </div>
+                        </form>
+                    </td>                    
+                </tr>
+                
             </tr>
         </table>
         <script src="script.js"></script>
