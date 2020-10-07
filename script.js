@@ -9,7 +9,7 @@ function rendertabelmahasiswa(dataawal){
         let colNIM = '<td>'+dataawal[index].NomorInduk+'</td>';
         let coljurusan = '<td>'+dataawal[index].Jurusan+'</td>';
         let colangkatan = '<td>'+dataawal[index].Angkatan+'</td>';
-        let doublebutton = '<td> <a onClick="Edit(this)">Edit</a><a onClick="Delete(this)">Delete</a>';
+        let doublebutton = '<td> <button onClick="Edit(this)" class="editbutton">Edit</button><br><button onClick="Delete(this)" class="deletebutton">Delete</button>';
 
         let barisbaru = '<tr>'+colname+colNIM+coljurusan+colangkatan+doublebutton+'</tr>';
         tbody.innerHTML += barisbaru;
@@ -73,8 +73,8 @@ function insertNewData(data){
     cell4 = newrow.insertCell(3);
     cell4.innerHTML = data.Angkatan;
     cell4 = newrow.insertCell(4);
-    cell4.innerHTML = `<a onClick="Edit(this)">Edit</a>
-                       <a onClick="Delete(this)">Delete</a>`;
+    cell4.innerHTML = `<button onClick="Edit(this)" class="editbutton">Edit</button><br>
+                       <button onClick="Delete(this)" class="deletebutton">Delete</button>`;
 }
 
 function clearForm(){
