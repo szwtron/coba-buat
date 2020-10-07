@@ -8,8 +8,10 @@
     </head>
     
     <body onload="onDocFinish()">
-        <div class="black font-white">
-            <header><strong>WELCOME TO MY SITE</strong></header>
+        <div class="black font-white col-12">
+            <header>
+                <strong>WELCOME TO MY SITE</strong>
+            </header>
         </div>
         <div style="padding-top: 10px;">
             <table class="content col-12">
@@ -34,26 +36,51 @@
         
         <div class="formcontainer col-6 center">
             <form onsubmit="event.preventDefault();onFormSubmit();" autocomplete="off" class="submitform">
-                <div>
+            
                     <label>Nama</label><label class="validation-error hide" id="fullNameValidationError">This field is required.</label>
                     <input type="text" name="namamahasiswa" id="namamahasiswa">
-                </div>
-                <div>
+                
+            
                     <label>Nomor Induk</label>
                     <input type="text" name="NomorInduk" id="NomorInduk">
-                </div>
-                <div>
+                
+            
                     <label>Jurusan</label>
                     <input type="text" name="Jurusan" id="Jurusan">
-                </div>
-                <div>
+                
+            
                     <label>Angkatan</label>
                     <input type="text" name="Angkatan" id="Angkatan">
-                </div>
-                <div class="form-action-buttons">
+                
+                
                     <input type="submit" value="Submit">
-                </div>
+                
             </form>
+        </div>
+
+        <div class="modalbox" id="modalbox">
+            <div class="modalboxcontent">
+                <form onsubmit="event.preventDefault();onModalSubmit();" autocomplete="off" class="editform">
+                        <label>Nama</label><label class="validation-error hide" id="fullNameValidationError">This field is required.</label>
+                        <input type="text" name="namamahasiswa" id="namahasiswa">
+                
+            
+                        <label>Nomor Induk</label>
+                        <input type="text" name="NomorInduk" id="NoInduk">
+                
+            
+                        <label>Jurusan</label>
+                        <input type="text" name="Jurusan" id="Jurus">
+                
+            
+                        <label>Angkatan</label>
+                        <input type="text" name="Angkatan" id="Angkat">
+                
+                    
+                        <input type="submit" value="Submit" class="modalbutton" onclick="modalclose()">
+                </form>
+                <span class="closemodal">X</span>
+            </div>
         </div>
         <script src="script.js"></script>
     </body>
