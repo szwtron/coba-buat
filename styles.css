@@ -267,11 +267,6 @@ label.validation-error{
     transition: visibility 0s, opacity 0.5s;
 }
 
-.boxactive{
-    visibility: visible;
-    opacity: 1;
-}
-
 .modalboxcontent{
     background-color: white;
     padding-right: 10px;
@@ -335,6 +330,48 @@ input[type=submit] {
     border-radius: 5px;
 }
 
+.alertfailedit{
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0s, opacity 0.5s;
+    border-radius: 5px;
+}
+
+.alertins{
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0s, opacity 0.5s;
+    border-radius: 5px;
+}
+
+.alertinsfail{
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0s, opacity 0.5s;
+    border-radius: 5px;
+}
+
 .boxactive{
     visibility: visible;
     opacity: 1;
@@ -349,4 +386,20 @@ input[type=submit] {
     margin-left: 30px;
     cursor: pointer;
 }
+
+.closeedfailalert{
+    margin-left: 30px;
+    cursor: pointer;
+}
+
+.closeinsalert{
+    margin-left: 30px;
+    cursor: pointer;
+}
+
+.closeinsfailalert{
+    margin-left: 30px;
+    cursor: pointer;
+}
+
 

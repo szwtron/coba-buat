@@ -26,6 +26,20 @@ function editalert(){
     edalert.classList.add('boxactive');
 }
 
+function editfailalert(){
+    var edfalert = document.querySelector('.alertfailedit');
+    edfalert.classList.add('boxactive');
+}
+
+function insalert(){
+    var inalert = document.querySelector('.alertins');
+    inalert.classList.add('boxactive');
+}
+
+function insfailalert(){
+    var infalert = document.querySelector('.alertinsfail');
+    infalert.classList.add('boxactive');
+}
 
 function loadfirstdata(){
     let request = new XMLHttpRequest();
@@ -163,6 +177,7 @@ function validate() {
         ||document.getElementById("Jurusan").value ==""||document.getElementById("Angkatan").value =="") {
         isValid = false;
         alert("Semua Data Wajib Diisi");
+        insfailalert();
     } else {
         isValid = true;
         insalert();
@@ -176,8 +191,10 @@ function validatemodalbox() {
         ||document.getElementById("Jurus").value ==""||document.getElementById("Angkat").value=="" ) {
         isValid = false;
         alert("Semua Data Wajib Diisi");
+        editfailalert();
     } else {
         isValid = true;
+        editalert();
     }
     return isValid;
 }
@@ -206,4 +223,25 @@ var closealertbox = document.querySelector('.closeedalert');
 closealertbox.addEventListener('click',function(){
     var edalert = document.querySelector('.alertedit');
     edalert.classList.remove('boxactive');
+})
+
+var closeedfalertbox = document.querySelector('.closeedfailalert');
+
+closeedfalertbox.addEventListener('click',function(){
+    var edfalert = document.querySelector('.alertfailedit');
+    edfalert.classList.remove('boxactive');
+})
+
+var closeinsalertbox = document.querySelector('.closeinsalert');
+
+closeinsalertbox.addEventListener('click',function(){
+    var inalert = document.querySelector('.alertins');
+    inalert.classList.remove('boxactive');
+})
+
+var closeinsfailalertbox = document.querySelector('.closeinsfailalert');
+
+closeinsfailalertbox.addEventListener('click',function(){
+    var infalert = document.querySelector('.alertinsfail');
+    infalert.classList.remove('boxactive');
 })
