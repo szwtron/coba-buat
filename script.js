@@ -9,12 +9,23 @@ function rendertabelmahasiswa(dataawal){
         let colNIM = '<td>'+dataawal[index].NomorInduk+'</td>';
         let coljurusan = '<td>'+dataawal[index].Jurusan+'</td>';
         let colangkatan = '<td>'+dataawal[index].Angkatan+'</td>';
-        let doublebutton = '<td> <button onClick="ModalEdit(this)" class="editbutton">Edit</button><br><button onClick="Delete(this)" class="deletebutton">Delete</button>';
+        let doublebutton = '<td> <button onClick="ModalEdit(this);" class="editbutton">Edit</button><br><button onClick="Delete(this);alertDelete()" class="deletebutton">Delete</button>';
 
         let barisbaru = '<tr>'+colname+colNIM+coljurusan+colangkatan+doublebutton+'</tr>';
         tbody.innerHTML += barisbaru;
     }
 }
+
+function alertDelete(){
+    var delalert = document.querySelector('.alertdelete');
+    delalert.classList.add('boxactive');
+}
+
+function editalert(){
+    var edalert = document.querySelector('.alertedit');
+    edalert.classList.add('boxactive');
+}
+
 
 function loadfirstdata(){
     let request = new XMLHttpRequest();
@@ -94,7 +105,7 @@ function insertNewData(data){
     cell4.innerHTML = data.Angkatan;
     cell4 = newrow.insertCell(4);
     cell4.innerHTML = `<button onClick="ModalEdit(this)" class="editbutton">Edit</button><br>
-                       <button onClick="Delete(this)" class="deletebutton">Delete</button>`;
+                       <button onClick="Delete(this);alertDelete()" class="deletebutton">Delete</button>`;
 }
 
 function clearForm(){
@@ -148,26 +159,25 @@ function Delete(td){
 
 function validate() {
     isValid = true;
-    if (document.getElementById("namamahasiswa").value == "") {
+    if (document.getElementById("namamahasiswa").value == ""||document.getElementById("NomorInduk").value  == ""
+        ||document.getElementById("Jurusan").value ==""||document.getElementById("Angkatan").value =="") {
         isValid = false;
-        document.getElementById("fullNameValidationError").classList.remove("hide");
+        alert("Semua Data Wajib Diisi");
     } else {
         isValid = true;
-        if (!document.getElementById("fullNameValidationError").classList.contains("hide"))
-            document.getElementById("fullNameValidationError").classList.add("hide");
+        insalert();
     }
     return isValid;
 }
 
 function validatemodalbox() {
     isValid = true;
-    if (document.getElementById("namahasiswa").value == "") {
+    if (document.getElementById("namahasiswa").value == ""|| document.getElementById("NoInduk").value == ""
+        ||document.getElementById("Jurus").value ==""||document.getElementById("Angkat").value=="" ) {
         isValid = false;
-        document.getElementById("fullNameValidationError").classList.remove("hide");
+        alert("Semua Data Wajib Diisi");
     } else {
         isValid = true;
-        if (!document.getElementById("fullNameValidationError").classList.contains("hide"))
-            document.getElementById("fullNameValidationError").classList.add("hide");
     }
     return isValid;
 }
@@ -182,4 +192,18 @@ var closemodalbox = document.querySelector('.closemodal');
 closemodalbox.addEventListener('click',function(){
     var modalBg = document.querySelector('.modalbox');
     modalBg.classList.remove('boxactive');
+})
+
+var closedelalertbox = document.querySelector('.closedelalert');
+
+closedelalertbox.addEventListener('click',function(){
+    var delalert = document.querySelector('.alertdelete');
+    delalert.classList.remove('boxactive');
+})
+
+var closealertbox = document.querySelector('.closeedalert');
+
+closealertbox.addEventListener('click',function(){
+    var edalert = document.querySelector('.alertedit');
+    edalert.classList.remove('boxactive');
 })

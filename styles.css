@@ -305,3 +305,48 @@ input[type=submit] {
   .closemodal{
     cursor: pointer;
   }
+  
+
+.alertdelete{
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0s, opacity 0.5s;
+    border-radius: 5px;
+}
+
+.alertedit{
+    background-color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    visibility: hidden;
+    opacity: 0;
+    transition: visibility 0s, opacity 0.5s;
+    border-radius: 5px;
+}
+
+.boxactive{
+    visibility: visible;
+    opacity: 1;
+}
+
+.closedelalert{
+    margin-left: 30px;
+    cursor: pointer;
+}
+
+.closeedalert{
+    margin-left: 30px;
+    cursor: pointer;
+}
+

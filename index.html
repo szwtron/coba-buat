@@ -61,7 +61,7 @@
         <div class="modalbox" id="modalbox">
             <div class="modalboxcontent">
                 <form onsubmit="event.preventDefault();onModalSubmit();" autocomplete="off" class="editform">
-                        <label>Nama</label><label class="validation-error hide" id="fullNameValidationError">This field is required.</label>
+                        <label>Nama</label>
                         <input type="text" name="namamahasiswa" id="namahasiswa">
                 
             
@@ -77,10 +77,20 @@
                         <input type="text" name="Angkatan" id="Angkat">
                 
                     
-                        <input type="submit" value="Submit" class="modalbutton" onclick="modalclose()">
+                        <input type="submit" value="Submit" class="modalbutton" onclick="modalclose();editalert();">
                 </form>
                 <span class="closemodal">X</span>
             </div>
+        </div>
+
+        <div class="alertdelete col-3">
+            <p>Data berhasil dihapus!</p>
+            <span class="closedelalert">X</span>
+        </div>
+
+        <div class="alertedit col-3">
+            <p>Data berhasil dirubah!</p>
+            <span class="closeedalert">X</span>
         </div>
         <script src="script.js"></script>
     </body>
